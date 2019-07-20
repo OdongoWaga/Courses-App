@@ -4,6 +4,7 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Animated,
+  Platform,
   Easing,
   StatusBar
 } from "react-native";
@@ -18,7 +19,6 @@ import { connect } from "react-redux";
 import Avatar from "../components/Avatar";import ApolloClient from "apollo-boost";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
-
 const CardsQuery = gql`
   {
     cardsCollection {
@@ -78,6 +78,8 @@ class HomeScreen extends React.Component {
 
   componentDidMount() {
     StatusBar.setBarStyle("dark-content", true);
+
+    if (Platform.OS == "android") StatusBar.setBarStyle("light-content", true);
   }
 
   componentDidUpdate() {
@@ -151,7 +153,7 @@ class HomeScreen extends React.Component {
                   <Logo key={index} image={logo.image} text={logo.text} />
                 ))}
               </ScrollView>
-              <Subtitle>Continue Learning</Subtitle>
+              <Subtitle>{"Continue Learning".toUpperCase()}</Subtitle>
               <ScrollView
                 horizontal={true}
                 style={{ paddingBottom: 30 }}
@@ -177,9 +179,9 @@ class HomeScreen extends React.Component {
                           >
                             <Card
                               title={card.title}
-                              image={card.image}
+                              image={{ uri: card.image.url }}
                               caption={card.caption}
-                              logo={card.logo}
+                              logo={{ uri: card.logo.url }}
                               subtitle={card.subtitle}
                               content={card.content}
                             />
@@ -190,19 +192,21 @@ class HomeScreen extends React.Component {
                   }}
                 </Query>
               </ScrollView>
-              <Subtitle>Popular Courses</Subtitle>
-              {courses.map((course, index) => (
-                <Course
-                  key={index}
-                  image={course.image}
-                  title={course.title}
-                  subtitle={course.subtitle}
-                  logo={course.logo}
-                  author={course.author}
-                  avatar={course.avatar}
-                  caption={course.caption}
-                />
-              ))}
+              <Subtitle>{"Popular Courses".toUpperCase()}</Subtitle>
+              <CoursesContainer>
+                {courses.map((course, index) => (
+                  <Course
+                    key={index}
+                    image={course.image}
+                    title={course.title}
+                    subtitle={course.subtitle}
+                    logo={course.logo}
+                    author={course.author}
+                    avatar={course.avatar}
+                    caption={course.caption}
+                  />
+                ))}
+              </CoursesContainer>
             </ScrollView>
           </SafeAreaView>
         </AnimatedContainer>
@@ -216,6 +220,12 @@ export default connect(
   mapDispatchToProps
 )(HomeScreen);
 
+const CoursesContainer = styled.View`
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-left: 10px;
+`;
+
 const Message = styled.Text`
   margin: 20px;
   color: #b8bece;
@@ -225,6 +235,7 @@ const Message = styled.Text`
 
 const CardsContainer = styled.View`
   flex-direction: row;
+  padding-left: 10px;
 `;
 
 const RootView = styled.View`
@@ -332,7 +343,7 @@ const courses = [
     subtitle: "10 sections",
     image: require("../assets/background13.jpg"),
     logo: require("../assets/logo-studio.png"),
-    author: "Waga Odongo",
+    author: "Meng To",
     avatar: require("../assets/avatar.jpg"),
     caption: "Design and interactive prototype"
   },
@@ -341,7 +352,7 @@ const courses = [
     subtitle: "12 sections",
     image: require("../assets/background11.jpg"),
     logo: require("../assets/logo-react.png"),
-    author: "Waga Odongo",
+    author: "Meng To",
     avatar: require("../assets/avatar.jpg"),
     caption: "Learn to design and code a React site"
   },
@@ -350,7 +361,7 @@ const courses = [
     subtitle: "10 sections",
     image: require("../assets/background14.jpg"),
     logo: require("../assets/logo-framerx.png"),
-    author: "Waga Odongo",
+    author: "Meng To",
     avatar: require("../assets/avatar.jpg"),
     caption: "Create powerful design and code components for your app"
   },
@@ -359,7 +370,7 @@ const courses = [
     subtitle: "10 sections",
     image: require("../assets/background6.jpg"),
     logo: require("../assets/logo-figma.png"),
-    author: "Waga Odongo",
+    author: "Meng To",
     avatar: require("../assets/avatar.jpg"),
     caption:
       "Complete guide to designing a site using a collaborative design tool"
