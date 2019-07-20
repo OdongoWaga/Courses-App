@@ -53,7 +53,7 @@ class Menu extends React.Component {
         <Cover>
           <Image source={require("../assets/background2.jpg")} />
           <Title>Waga Odongo</Title>
-          <Subtitle>Designer at Design+Code</Subtitle>
+          <Subtitle>Programmer at Designed</Subtitle>
         </Cover>
         <TouchableOpacity
           onPress={this.props.closeMenu}
