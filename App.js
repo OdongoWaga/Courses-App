@@ -6,17 +6,19 @@ import { Icon } from "expo";
 import { NotificationIcon } from "./components/Icons";
 import Logo from "./components/Logo";
 import Course from "./components/Course";
+import Menu from "./components/Menu";
 
 export default class App extends React.Component {
   render() {
     return (
       <Container>
         <SafeAreaView>
+          <Menu/>
           <ScrollView style={{ height: "100%" }}>
             <TitleBar>
               <Avatar source={require("./assets/avatar.jpg")} />
               <Title>Welcome back,</Title>
-              <Name>Meng</Name>
+              <Name>Xs</Name>
               <NotificationIcon
                 style={{ position: "absolute", right: 20, top: 5 }}
               />
