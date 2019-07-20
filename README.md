@@ -1,7 +1,7 @@
 # Courses-App
 React Native Courses App
 
-React native app showcasing Navigation, use of animations, fetching data from Contentful API using Graphql Webviews. Built with Styled Components.  
+React native app showcasing Navigation, use of animations, fetching data from Contentful API using Graphql. Built with Styled Components. Data and name displayed fetched at random from UI faces API
 
 
 <br>
