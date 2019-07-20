@@ -12,7 +12,7 @@ const Course = props => (
     <Content>
       <Avatar source={props.avatar} />
       <Caption>{props.caption}</Caption>
-      <Author>Taught by {props.author}</Author>
+      <Author>Created by {props.author}</Author>
     </Content>
   </Container>
 );
