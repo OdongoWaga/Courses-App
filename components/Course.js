@@ -42,7 +42,7 @@ class Course extends React.Component {
         <Content>
           <Avatar source={this.props.avatar} />
           <Caption>{this.props.caption}</Caption>
-          <Author>Taught by {this.props.author}</Author>
+          <Author>Created by {this.props.author}</Author>
         </Content>
       </Container>
     );
