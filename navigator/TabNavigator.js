@@ -5,7 +5,7 @@ import {
 } from "react-navigation";
 import HomeScreen from "../screens/HomeScreen";
 import SectionScreen from "../screens/SectionScreen";
-import * as Icon from '@expo/vector-icons'
+import { Icon } from "expo";
 import CoursesScreen from "../screens/CoursesScreen";
 import ProjectsScreen from "../screens/ProjectsScreen";
 
@@ -74,9 +74,9 @@ ProjectsStack.navigationOptions = {
 };
 
 const TabNavigator = createBottomTabNavigator({
-  ProjectsStack,
   HomeStack,
-  CoursesStack
+  CoursesStack,
+  ProjectsStack
 });
 
 export default TabNavigator;

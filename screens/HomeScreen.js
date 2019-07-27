@@ -4,9 +4,9 @@ import {
   SafeAreaView,
   TouchableOpacity,
   Animated,
-  Platform,
   Easing,
-  StatusBar
+  StatusBar,
+  Platform
 } from "react-native";
 import styled from "styled-components";
 import Card from "../components/Card";
@@ -16,9 +16,12 @@ import Logo from "../components/Logo";
 import Course from "../components/Course";
 import Menu from "../components/Menu";
 import { connect } from "react-redux";
-import Avatar from "../components/Avatar";import ApolloClient from "apollo-boost";
+import Avatar from "../components/Avatar";
+import ApolloClient from "apollo-boost";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
+import ModalLogin from "../components/ModalLogin";
+
 const CardsQuery = gql`
   {
     cardsCollection {
@@ -210,6 +213,7 @@ class HomeScreen extends React.Component {
             </ScrollView>
           </SafeAreaView>
         </AnimatedContainer>
+        <ModalLogin />
       </RootView>
     );
   }
@@ -308,7 +312,7 @@ const logos = [
 
 const cards = [
   {
-    title: "React Native",
+    title: "React Native for Designers",
     image: require("../assets/background11.jpg"),
     subtitle: "React Native",
     caption: "1 of 12 sections",
@@ -343,16 +347,16 @@ const courses = [
     subtitle: "10 sections",
     image: require("../assets/background13.jpg"),
     logo: require("../assets/logo-studio.png"),
-    author: "Waga Odongo",
+    author: "Meng To",
     avatar: require("../assets/avatar.jpg"),
     caption: "Design and interactive prototype"
   },
   {
-    title: "React",
+    title: "React for Designers",
     subtitle: "12 sections",
     image: require("../assets/background11.jpg"),
     logo: require("../assets/logo-react.png"),
-    author: "Waga Odongo",
+    author: "Meng To",
     avatar: require("../assets/avatar.jpg"),
     caption: "Learn to design and code a React site"
   },
@@ -361,7 +365,7 @@ const courses = [
     subtitle: "10 sections",
     image: require("../assets/background14.jpg"),
     logo: require("../assets/logo-framerx.png"),
-    author: "Waga Odongo",
+    author: "Meng To",
     avatar: require("../assets/avatar.jpg"),
     caption: "Create powerful design and code components for your app"
   },
@@ -370,7 +374,7 @@ const courses = [
     subtitle: "10 sections",
     image: require("../assets/background6.jpg"),
     logo: require("../assets/logo-figma.png"),
-    author: "Waga Odongo",
+    author: "Meng To",
     avatar: require("../assets/avatar.jpg"),
     caption:
       "Complete guide to designing a site using a collaborative design tool"
