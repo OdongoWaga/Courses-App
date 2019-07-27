@@ -5,7 +5,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard
 } from "react-native";
-import { BlurView } from "expo";
+import { BlurView } from 'expo-blur'
 
 class ModalLogin extends React.Component {
   state = {
