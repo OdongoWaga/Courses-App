@@ -1,3 +1,4 @@
+
 import React from "react";
 import {
   ScrollView,
@@ -10,7 +11,7 @@ import {
 } from "react-native";
 import styled from "styled-components";
 import Card from "../components/Card";
-import * as Icon from '@expo/vector-icons'
+import * as Icon from '@expo/vector-icons';
 import { NotificationIcon } from "../components/Icons";
 import Logo from "../components/Logo";
 import Course from "../components/Course";
@@ -65,6 +66,10 @@ function mapDispatchToProps(dispatch) {
     openMenu: () =>
       dispatch({
         type: "OPEN_MENU"
+      }),
+    openLogin: () =>
+      dispatch({
+        type: "OPEN_LOGIN"
       })
   };
 }
@@ -131,7 +136,7 @@ class HomeScreen extends React.Component {
             <ScrollView style={{ height: "100%" }}>
               <TitleBar>
                 <TouchableOpacity
-                  onPress={this.props.openMenu}
+                  onPress={this.props.openLogin}
                   style={{ position: "absolute", top: 0, left: 20 }}
                 >
                   <Avatar />
