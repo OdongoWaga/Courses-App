@@ -208,6 +208,6 @@ const projects = [
     image: require("../assets/background7.jpg"),
     author: "Nikhil D'Souza",
     text:
-      "Recently finished the React course by @Mengto, and I 10/10 would recommend. I already rewrote my personal website in @reactjs and I'm very excited with it."
+      "Recently finished the React course and I 10/10 would recommend. I already rewrote my personal website in @reactjs and I'm very excited with it."
   }
 ];
