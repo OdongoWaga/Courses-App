@@ -22,6 +22,8 @@ import ApolloClient from "apollo-boost";
 import gql from "graphql-tag";
 import { Query } from "react-apollo";
 import ModalLogin from "../components/ModalLogin";
+import NotificationButton from "../components/NotificationButton";
+import Notifications from "../components/Notifications";
 
 const CardsQuery = gql`
   {
@@ -70,6 +72,10 @@ function mapDispatchToProps(dispatch) {
     openLogin: () =>
       dispatch({
         type: "OPEN_LOGIN"
+      }),
+    openNotif: () =>
+      dispatch({
+        type: "OPEN_NOTIF"
       })
   };
 }
@@ -123,7 +129,7 @@ class HomeScreen extends React.Component {
   };
 
   handleAvatar = () => {
-    if (this.props.name) {
+    if (this.props.name !== "Stranger") {
       this.props.openMenu();
     } else {
       this.props.openLogin();
@@ -134,6 +140,7 @@ class HomeScreen extends React.Component {
     return (
       <RootView>
         <Menu />
+        <Notifications />
         <AnimatedContainer
           style={{
             transform: [{ scale: this.state.scale }],
@@ -151,9 +158,12 @@ class HomeScreen extends React.Component {
                 </TouchableOpacity>
                 <Title>Welcome back,</Title>
                 <Name>{this.props.name}</Name>
-                <NotificationIcon
+                <TouchableOpacity
+                  onPress={() => this.props.openNotif()}
                   style={{ position: "absolute", right: 20, top: 5 }}
-                />
+                >
+                  <NotificationButton />
+                </TouchableOpacity>
               </TitleBar>
               <ScrollView
                 style={{
