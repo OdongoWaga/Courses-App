@@ -6,16 +6,10 @@ React native app showcasing Navigation, use of animations, fetching data from Co
 
 
 <img height="700" src="https://github.com/OdongoWaga/Courses-App/blob/master/assets/1gif.gif" />
-
- 
  
 <img height="700" src="https://github.com/OdongoWaga/Courses-App/blob/master/assets/2.gif" />
  
- 
- 
 <img height="700" src="https://github.com/OdongoWaga/Courses-App/blob/master/assets/3.gif" />
-
- 
 
 <img height="700" src="https://github.com/OdongoWaga/Courses-App/blob/master/assets/4.gif" />
 
