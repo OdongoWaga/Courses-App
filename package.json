@@ -10,7 +10,7 @@
   "dependencies": {
     "@expo/vector-icons": "^10.0.0",
     "apollo-boost": "^0.4.3",
-    "expo": "^33.0.0",
+    "expo": "^46.0.14",
     "expo-av": "~5.0.2",
     "expo-blur": "~5.0.1",
     "expo-linear-gradient": "~5.0.1",
